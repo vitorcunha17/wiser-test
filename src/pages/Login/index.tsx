@@ -1,8 +1,12 @@
 import React from 'react';
 import { Row, Col, Form } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
 import DefaultButton from 'components/DefaultButton';
 import DefaultInput from 'components/DefaultInput';
 import LabelInput from 'components/LabelInput';
+import { Store } from 'antd/lib/form/interface';
+import { Creators } from 'store/auth/actions';
+import { RootState } from 'store/reducers';
 import {
   ImageLeft,
   StyledLogin,
@@ -16,12 +20,13 @@ import {
   AlignButton
 } from './styles';
 
-const Login = ({ dispatch, user }) => {
-  const onFinish = values => {
-    dispatch({
-      type: 'user/LOGIN',
-      payload: values,
-    })
+const Login = () => {
+  const dispatch = useDispatch();
+  const loading = useSelector((state: RootState) => state.auth.loading);
+  
+  const onFinish = (values: Store) => {
+    const { email, password } = values;
+    dispatch(Creators.login(email, password));
   }
 
   const onFinishFailed = errorInfo => {
@@ -61,7 +66,7 @@ const Login = ({ dispatch, user }) => {
                   <DefaultInput type='password' placeholder='*******' />
                 </Form.Item>
                 <AlignButton>
-                  <DefaultButton htmlType='submit'>ENTRAR</DefaultButton>
+                  <DefaultButton htmlType='submit'>{loading ? 'Carregando' : 'ENTRAR'}</DefaultButton>
                 </AlignButton>
               </Form>
             </MobileCard>

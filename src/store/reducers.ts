@@ -7,8 +7,8 @@ import { connectRouter } from 'connected-react-router'
 export const history = createBrowserHistory()
 
 const rootReducer = combineReducers({
-    router: connectRouter(history),
-    auth,
+  router: connectRouter(history),
+  auth,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
