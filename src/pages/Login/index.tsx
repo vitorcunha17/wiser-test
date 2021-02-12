@@ -1,5 +1,8 @@
 import React from 'react';
 import { Row, Col, Form } from 'antd';
+import DefaultButton from 'components/DefaultButton';
+import DefaultInput from 'components/DefaultInput';
+import LabelInput from 'components/LabelInput';
 import {
   ImageLeft,
   StyledLogin,
@@ -7,9 +10,6 @@ import {
   Title,
   Subtitle,
   StyledCol,
-  InputLabel,
-  InputDefault,
-  ButtonDefault,
   ForgotPassText,
   StyledLink,
   MobileCard,
@@ -44,31 +44,29 @@ const Login = ({ dispatch, user }) => {
                 onFinish={onFinish}
                 onFinishFailed={onFinishFailed}
               >
-                <InputLabel>E-MAIL</InputLabel>
+                <LabelInput>E-MAIL</LabelInput>
                 <Form.Item
                   hasFeedback
                   name='email'
                   rules={[{ required: true, message: 'Digite um e-mail válido;' }]}
                 >
-                  <InputDefault type='text' placeholder='user.name@mail.com' />
+                  <DefaultInput type='text' placeholder='user.name@mail.com' />
                 </Form.Item>
-                <InputLabel>SENHA</InputLabel>
+                <LabelInput>SENHA</LabelInput>
                 <Form.Item
                   hasFeedback
                   name='password'
                   rules={[{ required: true, message: 'Digite uma senha válida;' }]}
                 >
-                  <InputDefault type='password' placeholder='*******' />
+                  <DefaultInput type='password' placeholder='*******' />
                 </Form.Item>
                 <AlignButton>
-                  <ButtonDefault htmlType='submit'>ENTRAR</ButtonDefault>
+                  <DefaultButton htmlType='submit'>ENTRAR</DefaultButton>
                 </AlignButton>
               </Form>
             </MobileCard>
             <ForgotPassText>
-              Esqueceu seu login ou senha?
-                <br />
-                Clique <StyledLink href='#'>aqui</StyledLink>
+              Esqueceu seu login ou senha?<br />Clique <StyledLink href='#'>aqui</StyledLink>
             </ForgotPassText>
           </StyledLogin>
         </StyledCol>
