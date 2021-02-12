@@ -11,7 +11,7 @@ const initialState = {
   loading: false,
 }
 
-export default function userReducer(state = initialState, action: {type: string, payload: any}) {
+export default function userReducer(state = initialState, action: { type: string, payload: any }) {
   switch (action.type) {
     case Types.SET_STATE:
       return { ...state, ...action.payload }

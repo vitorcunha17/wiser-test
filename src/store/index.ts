@@ -9,10 +9,10 @@ const routeMiddleware = routerMiddleware(history);
 const middlewares = [sagaMiddleware, routeMiddleware]
 
 
-const store = createStore(rootReducer, 
-    compose(
-        applyMiddleware(...middlewares)
-    )
+const store = createStore(rootReducer,
+  compose(
+    applyMiddleware(...middlewares)
+  )
 );
 
 sagaMiddleware.run(rootSaga);
