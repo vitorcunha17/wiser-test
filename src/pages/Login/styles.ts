@@ -65,7 +65,7 @@ export const Title = styled.p`
 `
 
 export const Subtitle = styled.p`
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 400;
   color: ${colors.lightBlue};
 
@@ -89,8 +89,8 @@ export const InputDefault = styled(Input)`
 
 export const InputLabel = styled.span`
   color: ${colors.darkBlue};
-  font-size: 12px;
-  margin-bottom: 100px;
+  font-size: 10px;
+  margin-left: 11px;
 `
 
 export const ButtonDefault = styled(Button)`
@@ -118,7 +118,7 @@ export const ButtonDefault = styled(Button)`
 export const ForgotPassText = styled.p`
   text-align: center;
   color: ${colors.lightBlue};
-  margin-top: 4rem;
+  margin-top: 7.5rem;
   font-size: 14px;
 
   @media (max-width: ${screenSize.mobile}) {
@@ -134,6 +134,10 @@ export const StyledLink = styled.a`
   @media (max-width: ${screenSize.mobile}) {
     color: ${colors.white};
   }
+`
+
+export const AlignButton = styled.div`
+  text-align: center;
 `
 
 export const MobileCard = styled.div`

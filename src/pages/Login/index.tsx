@@ -1,6 +1,20 @@
 import React from 'react';
 import { Row, Col, Form } from 'antd';
-import { ImageLeft, StyledLogin, StyledLayout, Title, Subtitle, StyledCol, InputLabel, InputDefault, ButtonDefault, ForgotPassText, StyledLink, MobileCard } from './styles';
+import {
+  ImageLeft,
+  StyledLogin,
+  StyledLayout,
+  Title,
+  Subtitle,
+  StyledCol,
+  InputLabel,
+  InputDefault,
+  ButtonDefault,
+  ForgotPassText,
+  StyledLink,
+  MobileCard,
+  AlignButton
+} from './styles';
 
 const Login = ({ dispatch, user }) => {
   const onFinish = values => {
@@ -32,6 +46,7 @@ const Login = ({ dispatch, user }) => {
               >
                 <InputLabel>E-MAIL</InputLabel>
                 <Form.Item
+                  hasFeedback
                   name='email'
                   rules={[{ required: true, message: 'Digite um e-mail válido;' }]}
                 >
@@ -39,16 +54,19 @@ const Login = ({ dispatch, user }) => {
                 </Form.Item>
                 <InputLabel>SENHA</InputLabel>
                 <Form.Item
+                  hasFeedback
                   name='password'
                   rules={[{ required: true, message: 'Digite uma senha válida;' }]}
                 >
                   <InputDefault type='password' placeholder='*******' />
                 </Form.Item>
-                <ButtonDefault htmlType='submit'>ENTRAR</ButtonDefault>
+                <AlignButton>
+                  <ButtonDefault htmlType='submit'>ENTRAR</ButtonDefault>
+                </AlignButton>
               </Form>
             </MobileCard>
             <ForgotPassText>
-                Esqueceu seu login ou senha?
+              Esqueceu seu login ou senha?
                 <br />
                 Clique <StyledLink href='#'>aqui</StyledLink>
             </ForgotPassText>
