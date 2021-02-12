@@ -1,0 +1,6 @@
+@import '~antd/dist/antd.css';
+
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat"), url('./assets/fonts/Montserrat/Montserrat-Medium.ttf') format("truetype");
+}
