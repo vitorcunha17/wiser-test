@@ -10,7 +10,7 @@ describe("Login render Page", () => {
 
   it('render 2 input components', () => {
     const { getByLabelText } = render(<Login />);
-    expect(getByLabelText(/username/i)).toBeInTheDocument();
+    expect(getByLabelText(/email/i)).toBeInTheDocument();
     expect(getByLabelText(/password/i)).toBeInTheDocument();
   });
 
