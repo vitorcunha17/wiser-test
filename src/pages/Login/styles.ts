@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import img from '../../assets/images/bg-image.png';
-import { Layout, Col, Input } from 'antd';
+import { Layout, Col } from 'antd';
 import colors from '../../helpers/defaultColors';
 import screenSize from '../../helpers/screenSizes';
 
