@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import img from '../../assets/images/bg-image.png';
 import { Layout, Col, Input, Button } from 'antd';
 import colors from '../../helpers/defaultColors';
+import screenSize from '../../helpers/screenSizes';
 
 const windowHeight = window.innerHeight
 
@@ -13,7 +14,7 @@ export const ImageLeft = styled.div`
   background-repeat: no-repeat;
   background-position-x: center;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${screenSize.tablet}) {
     background-position-x: center;
     display: none;
   }
@@ -24,20 +25,27 @@ export const StyledLogin = styled.div`
   padding-right: 20%;
   padding-left: 20%;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${screenSize.tablet}) {
     width: 100%;
   }
 
-  @media (max-width: 450px) {
-    padding-top: 15%;
-    padding-right: 10%;
-    padding-left: 10%;
+  @media (max-width: ${screenSize.mobile}) {
+    padding-top: 20%;
+    padding-right: 8%;
+    padding-left: 8%;
   }
 `
 
 export const StyledCol = styled(Col)`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${screenSize.mobile}) {
+    background-image: linear-gradient(0deg, #130525 42%, rgba(105, 57, 153, 0) 100%), url(${img});
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: ${windowHeight}px;
+  }
 `
 
 export const StyledLayout = styled(Layout)`
@@ -49,12 +57,26 @@ export const Title = styled.p`
   font-size: 40px;
   font-weight: 400;
   color: ${colors.purple};
+
+  @media (max-width: ${screenSize.mobile}) {
+    text-align: center;
+    font-size: 24px;
+  }
 `
 
 export const Subtitle = styled.p`
   font-size: 19px;
   font-weight: 400;
   color: ${colors.lightBlue};
+
+  @media (max-width: ${screenSize.mobile}) {
+    text-align: center;
+    font-size: 12px;
+
+    br {
+      display: none;
+    }
+  }
 `
 
 export const InputDefault = styled(Input)`
@@ -79,6 +101,12 @@ export const ButtonDefault = styled(Button)`
   border-radius: 8px;
   height: 48px;
   color: ${colors.white};
+  border-color: transparent;
+
+  @media (max-width: ${screenSize.mobile}) {
+    box-shadow: none;
+    width: 60%;
+  }
 
   &:hover {
     box-shadow: 0px 10px 25px ${colors.lightPurple};
@@ -90,9 +118,32 @@ export const ButtonDefault = styled(Button)`
 export const ForgotPassText = styled.p`
   text-align: center;
   color: ${colors.lightBlue};
-  margin-top: 1.5rem;
+  margin-top: 4rem;
+  font-size: 14px;
+
+  @media (max-width: ${screenSize.mobile}) {
+    color: ${colors.white};
+    margin-top: 3rem;
+  }
 `
 
 export const StyledLink = styled.a`
   color: ${colors.darkPurple};
+  text-decoration: underline;
+
+  @media (max-width: ${screenSize.mobile}) {
+    color: ${colors.white};
+  }
+`
+
+export const MobileCard = styled.div`
+  width: 100%;
+  height: 23.4rem;
+  background-color: ${colors.white};
+  border-radius: 8px;
+
+  @media (max-width: ${screenSize.mobile}) {
+    display: inline-block;
+    padding: 2rem;
+  }
 `
