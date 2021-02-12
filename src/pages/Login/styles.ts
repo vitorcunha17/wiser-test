@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import img from '../../assets/images/bg-image.png';
-import { Layout, Col, Input, Button } from 'antd';
+import { Layout, Col, Input } from 'antd';
 import colors from '../../helpers/defaultColors';
 import screenSize from '../../helpers/screenSizes';
 
@@ -76,42 +76,6 @@ export const Subtitle = styled.p`
     br {
       display: none;
     }
-  }
-`
-
-export const InputDefault = styled(Input)`
-  background-color: ${colors.transparent};
-  border-radius: 8px;
-  border: 1px solid ${colors.lightGrey};
-  height: 48px;
-  width: 100%;
-`
-
-export const InputLabel = styled.span`
-  color: ${colors.darkBlue};
-  font-size: 10px;
-  margin-left: 11px;
-`
-
-export const ButtonDefault = styled(Button)`
-  width: 100%;
-  font-size: 16px;
-  background: linear-gradient(267.79deg, #383E71 0%, #9D25B0 99.18%);
-  box-shadow: 0px 10px 25px ${colors.lightPurple};
-  border-radius: 8px;
-  height: 48px;
-  color: ${colors.white};
-  border-color: transparent;
-
-  @media (max-width: ${screenSize.mobile}) {
-    box-shadow: none;
-    width: 60%;
-  }
-
-  &:hover {
-    box-shadow: 0px 10px 25px ${colors.lightPurple};
-    background: linear-gradient(0.79deg, #383E71 0%, #9D25B0 99.18%);
-    color: ${colors.white}; 
   }
 `
 
